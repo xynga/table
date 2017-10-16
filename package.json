@@ -1,0 +1,15 @@
+{
+  "name": "table",
+  "version": "1.0.0",
+  "description": "Holds all the components classified under the label \"Table\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@angular/core": "~4.4.4",
+    "@angular/common": "~4.4.4"
+  }
+}

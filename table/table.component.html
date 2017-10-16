@@ -1,0 +1,37 @@
+
+
+<div class="table-container" style="border: solid dimgray 2px;">
+  <div>
+    <table>
+      <tr class="table-header" #header>
+        <td *ngIf="numbered" (click)="sortTable(-1)">#</td>
+        <td *ngFor="let header of columnHeaders, let i=index" (click)="sortTable(i)">
+          {{header}}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="table-data"
+       [ngStyle]="{'max-height.px':maxHeight}"
+       [ngClass]="{'scrollable':scrollable , 'paginated':paginated, 'standard':(!scrollable && !paginated)}">
+    <table #tableData>
+      <ng-content></ng-content>
+    </table>
+  </div>
+</div>
+
+<br>
+<div *ngIf="paginated" style="text-align: center">
+  <button [disabled]="currentPage == 1" type="button" (click)="switchPage(1)">first</button>
+  <button [disabled]="currentPage == 1" type="button" (click)="prevPage()">prev</button>
+  <div *ngFor="let page of pages,let i = index" style="display: inline;">
+    <button *ngIf="buttonDisplay(page)" [disabled]="currentPage == page" type="button" (click)="switchPage(page)">{{page}}</button>
+  </div>
+  <button [disabled]="currentPage == pages.length" type="button" (click)="nextPage()">next</button>
+  <button [disabled]="currentPage == pages.length" type="button" (click)="switchPage(pages.length)">last</button>
+</div>
+
+
+
+

@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+.paginated {
+  overflow-y: hidden;
+}
+
+.scrollable {
+  overflow-y: auto;
+}
+
+.standard {
+  overflow: hidden;
+}
+
+div.table-data {
+  background: whitesmoke;
+  position: relative;
+}
+
+tr.table-header {
+  background: darkgray;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid dimgrey;
+  text-align: left;
+  padding: 8px;
+}
+
