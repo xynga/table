@@ -1,4 +1,4 @@
-import {AfterContentInit, AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {AfterContentInit, AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild} from '@angular/core';
 
 const SELECTOR: string = 'ui-table';
 
@@ -52,7 +52,13 @@ export class TableComponent implements OnInit, AfterViewInit, AfterContentInit{
     }
   }
 
-  public styleTable() {
+    @HostListener('window:resize')
+    onResize(){
+        this.setColumnWidths();
+    }
+
+
+    public styleTable() {
     this.childCount = this.tableHeader.nativeElement.childElementCount;
 
     let bodyChildren = this.tableData.nativeElement.getElementsByTagName('td')
