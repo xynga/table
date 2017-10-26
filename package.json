@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@angular/core": "~4.4.4",
-    "@angular/common": "~4.4.4"
+    "@angular/core": "^4.4.4",
+    "@angular/common": "^4.4.4"
   }
 }
