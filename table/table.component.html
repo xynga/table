@@ -4,9 +4,13 @@
   <div>
     <table>
       <tr class="table-header" #header>
+
         <td *ngIf="numbered" (click)="sortTable(-1)">#</td>
         <td *ngFor="let header of columnHeaders, let i=index" (click)="sortTable(i)">
-          {{header}}
+          {{header.name}}
+          <div *ngIf="header.sortable" style="float:right">
+            <icon icon="col-toggle"></icon>
+          </div>
         </td>
       </tr>
     </table>
