@@ -1,6 +1,6 @@
 {
   "name": "xynga-table",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Holds all the components classified under the label \"Table\"",
   "main": "index.js",
   "scripts": {
