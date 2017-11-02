@@ -4,7 +4,7 @@
 
 # Synopisis
 
-Xynga-Table is an Angular 4 library that is made up of a single table component, that is easy to implement and has options to make the table paginated and scrollable.
+Xynga-Table is an Angular 4 library that is made up of a single table component that is easy to implement and has customization options to make it paginated and scrollable.
 
 # Motivation
 
