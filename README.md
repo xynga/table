@@ -26,7 +26,7 @@ xyngaba@gmail.com <br/>
 
 Xynga website: [XYNGA WEBSITE] <br/>
 
-github: github.com/xynga/table <br/>
+github: https://www.github.com/xynga/table <br/>
 
 npm: https://www.npmjs.com/package/xynga-table <br/>
 
