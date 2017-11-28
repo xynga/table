@@ -31,8 +31,9 @@ table {
 
 th,
 td {
-  border: 1px solid dimgrey;
+  border: 1px solid #266eb3;
   text-align: left;
   padding: 8px;
+  color: #c0c0c0
 }
 
