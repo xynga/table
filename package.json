@@ -4,7 +4,7 @@
   "description": "Holds all the components classified under the label \"Table\"",
   "main": "index.js",
   "scripts": {
-    "prepublish": "if exist \"js\\\" ( rmdir /s /q js && echo JS folder and previous transpiled sources removed && tsc ) else ( tsc )"
+    "prepublish": "if exist \"js\\\" ( rmdir /s /q js && echo js\\ folder and previous transpiled sources removed && tsc ) else ( tsc )"
   },
   "author": "",
   "license": "MIT",
