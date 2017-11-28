@@ -122,7 +122,7 @@ export class TableComponent implements OnInit, AfterViewInit, AfterContentInit{
         console.log(Math.ceil(rows/perPage));
         var pages = (Math.ceil(rows/perPage));
         var arr = Array.apply(null,Array(pages));
-        this.pages = arr.map((x, i)=>i+1);
+        this.pages = arr.map((x:any, i:any)=>i+1);
     }
 
     public displayPages(){
