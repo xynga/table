@@ -8,8 +8,9 @@
         <td *ngIf="numbered" (click)="sortTable(-1)">#</td>
         <td *ngFor="let header of columnHeaders, let i=index" (click)="sortTable(i)">
           {{header.name}}
-          <div *ngIf="header.sortable" style="float:right">
-            <icon icon="col-toggle"></icon>
+          <div style="float:right">
+            <ng-container *ngIf="!header.sortable; else icon">
+            </ng-container>
           </div>
         </td>
       </tr>
