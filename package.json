@@ -2,15 +2,28 @@
   "name": "xynga-table",
   "version": "1.0.6",
   "description": "Holds all the components classified under the label \"Table\"",
-  "main": "index.js",
+  "main": "table/inline/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "gulp inline && ngc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xynga/table.git"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "@angular/core": "^4.4.4",
     "@angular/common": "^4.4.4",
-    "xynga-general": "latest"
+    "xynga-general": "git://github.com/xynga/general.git#compile-test"
+  },
+  "devDependencies": {
+    "@angular/compiler": "^4.4.4",
+    "@angular/compiler-cli": "^4.4.4",
+    "gulp": "^3.9.1",
+    "gulp-inline-ng2-template": "^4.0.0",
+    "node-sass": "^4.7.2",
+    "typescript": "^2.4.2"
   }
 }
