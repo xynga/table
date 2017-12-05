@@ -1,4 +1,7 @@
-import {AfterContentInit, AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild} from '@angular/core';
+import {
+    AfterContentInit, AfterViewInit, Component, ContentChild, ElementRef, HostListener, Input, OnInit, TemplateRef,
+    ViewChild
+} from '@angular/core';
 
 const SELECTOR: string = 'ui-table';
 
@@ -27,6 +30,7 @@ export class TableComponent implements OnInit, AfterViewInit, AfterContentInit{
 
     @ViewChild('header') tableHeader: ElementRef;
     @ViewChild('tableData') tableData: ElementRef;
+    @ContentChild(TemplateRef) icon: TemplateRef<any>;
     childCount: number;
     numColumns: number;
 
