@@ -14,9 +14,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@angular/core": "^4.4.4",
-    "@angular/common": "^4.4.4",
     "xynga-general": "git://github.com/xynga/general.git#compile-test"
+  },
+  "peerDependencies": {
+    "@angular/core": "^4.4.4",
+    "@angular/common": "^4.4.4"
   },
   "devDependencies": {
     "@angular/compiler": "^4.4.4",
