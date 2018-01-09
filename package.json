@@ -23,11 +23,10 @@
     "url": "https://github.com/xynga/table.git"
   },
   "peerDependencies": {
-    "@angular/animations": ">=4.4.4",
-    "@angular/core": ">=4.4.4",
-    "@angular/http": ">=4.4.4",
-    "@angular/router": ">=4.4.6",
-    "ng2-file-upload": "^1.2.1",
+    "@angular/animations": ">=4.0.0",
+    "@angular/core": ">=4.0.0",
+    "@angular/http": ">=4.0.0",
+    "@angular/router": ">=4.0.0",
     "rxjs": "^5.4.3",
     "tether": "^1.4.0",
     "waypoints": "^4.0.1"
