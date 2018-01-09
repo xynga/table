@@ -9,7 +9,7 @@
         <td *ngFor="let header of columnHeaders, let i=index" (click)="sortTable(i)">
           {{header.name}}
           <div *ngIf="header.sortable" style="float:right">
-            <icon icon="col-toggle"></icon>
+           <svg style="width: 10px; height: 14px"><path data-name="top arrow" d="M5 0l5 5.8H0zM5 14L0 8.2h10z" fill="#1e407a"/></svg>
           </div>
         </td>
       </tr>

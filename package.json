@@ -1,31 +1,35 @@
 {
   "name": "xynga-table",
-  "version": "1.0.6",
-  "description": "Holds all the components classified under the label \"Table\"",
-  "main": "table/inline/index.js",
+  "version": "0.0.1",
+  "description": "Holds all of the components classified under the label of \"table\"",
+  "main": "dist/inline/index.js",
+  "files": [
+    "dist/inline"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "gulp inline && ngc"
+    "build": "cd src && npm run compile",
+    "link-build": "npm link && cd testing && npm link xynga-table",
+    "postversion": "git push",
+    "rebuild": "npm run build && npm start",
+    "setup": "cd src && npm i && cd .. && npm run build && cd testing && npm i && cd .. && npm run link-build",
+    "start": "cd testing && start chrome http://localhost:4200 && ng serve",
+    "test": "npm run start"
   },
+  "author": "GradTech V",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/xynga/table.git"
   },
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "xynga-general": "git://github.com/xynga/general.git#compile-test"
-  },
   "peerDependencies": {
-    "@angular/core": "^4.4.4",
-    "@angular/common": "^4.4.4"
-  },
-  "devDependencies": {
-    "@angular/compiler": "^4.4.4",
-    "@angular/compiler-cli": "^4.4.4",
-    "gulp": "^3.9.1",
-    "gulp-inline-ng2-template": "^4.0.0",
-    "node-sass": "^4.7.2",
-    "typescript": "^2.4.2"
+    "@angular/animations": ">=4.4.4",
+    "@angular/core": ">=4.4.4",
+    "@angular/http": ">=4.4.4",
+    "@angular/router": ">=4.4.6",
+    "ng2-file-upload": "^1.2.1",
+    "rxjs": "^5.4.3",
+    "tether": "^1.4.0",
+    "waypoints": "^4.0.1",
+    "xynga-general": "git://github.com/xynga/general.git#compile-test"
   }
 }

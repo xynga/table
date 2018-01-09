@@ -9,8 +9,6 @@ const INLINE_TEMPLATES = {
         '!node_modules/**',
         '!inline',
         '!inline/**',
-        '!table',
-        '!table/**'
     ],
     DIST: './inline',
     CONFIG: {
