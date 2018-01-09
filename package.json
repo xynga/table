@@ -2,6 +2,7 @@
   "name": "xynga-table",
   "version": "0.0.1",
   "description": "Holds all of the components classified under the label of \"table\"",
+  "types": "dist/inline/index.d.ts",
   "main": "dist/inline/index.js",
   "files": [
     "dist/inline"
