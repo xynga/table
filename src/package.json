@@ -1,0 +1,31 @@
+{
+  "name": "xynga-table-source",
+  "version": "0.0.1",
+  "description": "Holds all of the components classified under the label \"table\"",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "gulp inline && ngc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xynga/table.git"
+  },
+  "author": "Gradtech V",
+  "license": "MIT",
+  "devDependencies": {
+    "@angular/common": "^4.4.4",
+    "@angular/compiler": "^4.4.4",
+    "@angular/compiler-cli": "^4.4.4",
+    "@angular/core": "^4.4.4",
+    "@angular/platform-browser": "^4.4.4",
+    "@angular/router": "^4.4.4",
+    "@types/node": "^8.0.54",
+    "gulp": "^3.9.1",
+    "gulp-inline-ng2-template": "^4.0.0",
+    "node-sass": "^4.7.2",
+    "rxjs": "^5.0.1",
+    "typescript": "^2.4.2",
+    "zone.js": "^0.8.4"
+  }
+}

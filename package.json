@@ -1,16 +1,34 @@
 {
   "name": "xynga-table",
-  "version": "1.0.6",
-  "description": "Holds all the components classified under the label \"Table\"",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "Holds all of the components classified under the label of \"table\"",
+  "types": "dist/inline/index.d.ts",
+  "main": "dist/inline/index.js",
+  "files": [
+    "dist/inline"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cd src && npm run compile",
+    "link-build": "npm link && cd testing && npm link xynga-table",
+    "postversion": "git push",
+    "rebuild": "npm run build && npm start",
+    "setup": "cd src && npm i && cd .. && npm run build && cd testing && npm i && cd .. && npm run link-build",
+    "start": "cd testing && start chrome http://localhost:4200 && ng serve",
+    "test": "npm run start"
   },
-  "author": "",
+  "author": "GradTech V",
   "license": "MIT",
-  "dependencies": {
-    "@angular/core": "^4.4.4",
-    "@angular/common": "^4.4.4",
-    "xynga-general": "latest"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xynga/table.git"
+  },
+  "peerDependencies": {
+    "@angular/animations": ">=4.0.0",
+    "@angular/core": ">=4.0.0",
+    "@angular/http": ">=4.0.0",
+    "@angular/router": ">=4.0.0",
+    "rxjs": "^5.4.3",
+    "tether": "^1.4.0",
+    "waypoints": "^4.0.1"
   }
 }

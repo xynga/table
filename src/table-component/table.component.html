@@ -8,9 +8,8 @@
         <td *ngIf="numbered" (click)="sortTable(-1)">#</td>
         <td *ngFor="let header of columnHeaders, let i=index" (click)="sortTable(i)">
           {{header.name}}
-          <div style="float:right">
-            <ng-container *ngIf="!header.sortable; else icon">
-            </ng-container>
+          <div *ngIf="header.sortable" style="float:right">
+           <svg style="width: 10px; height: 14px"><path data-name="top arrow" d="M5 0l5 5.8H0zM5 14L0 8.2h10z" fill="#1e407a"/></svg>
           </div>
         </td>
       </tr>

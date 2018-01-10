@@ -1,7 +1,4 @@
-import {
-    AfterContentInit, AfterViewInit, Component, ContentChild, ElementRef, HostListener, Input, OnInit, TemplateRef,
-    ViewChild
-} from '@angular/core';
+import {AfterContentInit, AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild} from '@angular/core';
 
 const SELECTOR: string = 'ui-table';
 
@@ -17,8 +14,48 @@ export class ColumnHeader {
 
 @Component({
     selector: SELECTOR,
-    templateUrl: './table.component.html',
-    styleUrls:['./table.component.css'] //This CSS is necessary for the tables to display properly
+    template: `
+
+
+      <div class="table-container" style="border: solid dimgray 2px;">
+        <div>
+          <table>
+            <tr class="table-header" #header>
+
+              <td *ngIf="numbered" (click)="sortTable(-1)">#</td>
+              <td *ngFor="let header of columnHeaders, let i=index" (click)="sortTable(i)">
+                {{header.name}}
+                <div *ngIf="header.sortable" style="float:right">
+                 <svg style="width: 10px; height: 14px"><path data-name="top arrow" d="M5 0l5 5.8H0zM5 14L0 8.2h10z" fill="#1e407a"/></svg>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="table-data"
+             [ngStyle]="{'max-height.px':maxHeight}"
+             [ngClass]="{'scrollable':scrollable , 'paginated':paginated, 'standard':(!scrollable && !paginated)}">
+          <table #tableData>
+            <ng-content></ng-content>
+          </table>
+        </div>
+      </div>
+
+      <br>
+      <div *ngIf="paginated" style="text-align: center">
+        <button [disabled]="currentPage == 1" type="button" (click)="switchPage(1)">first</button>
+        <button [disabled]="currentPage == 1" type="button" (click)="prevPage()">prev</button>
+        <div *ngFor="let page of pages,let i = index" style="display: inline;">
+          <button *ngIf="buttonDisplay(page)" [disabled]="currentPage == page" type="button" (click)="switchPage(page)">{{page}}</button>
+        </div>
+        <button [disabled]="currentPage == pages.length" type="button" (click)="nextPage()">next</button>
+        <button [disabled]="currentPage == pages.length" type="button" (click)="switchPage(pages.length)">last</button>
+      </div>
+    `,
+    styles: [`
+      *{box-sizing:border-box}.paginated{overflow-y:hidden}.scrollable{overflow-y:auto}.standard{overflow:hidden}div.table-data{background:whitesmoke;position:relative}tr.table-header{background:darkgray}table{table-layout:fixed;border-collapse:collapse;width:100%}th,td{border:1px solid dimgrey;text-align:left;padding:8px}
+    `] //This CSS is necessary for the tables to display properly
 })
 export class TableComponent implements OnInit, AfterViewInit, AfterContentInit{
     @Input() public columnHeaders: ColumnHeader[];
@@ -30,7 +67,6 @@ export class TableComponent implements OnInit, AfterViewInit, AfterContentInit{
 
     @ViewChild('header') tableHeader: ElementRef;
     @ViewChild('tableData') tableData: ElementRef;
-    @ContentChild(TemplateRef) icon: TemplateRef<any>;
     childCount: number;
     numColumns: number;
 
@@ -126,7 +162,7 @@ export class TableComponent implements OnInit, AfterViewInit, AfterContentInit{
         console.log(Math.ceil(rows/perPage));
         var pages = (Math.ceil(rows/perPage));
         var arr = Array.apply(null,Array(pages));
-        this.pages = arr.map((x, i)=>i+1);
+        this.pages = arr.map((x:any, i:any)=>i+1);
     }
 
     public displayPages(){
