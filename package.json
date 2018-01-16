@@ -1,7 +1,7 @@
 {
   "name": "xynga-table",
-  "version": "0.0.1",
-  "description": "Holds all of the components classified under the label of \"table\"",
+  "version": "1.0.7",
+  "description": "Holds all of the components classified under the label of \"Table\"",
   "types": "dist/inline/index.d.ts",
   "main": "dist/inline/index.js",
   "files": [
