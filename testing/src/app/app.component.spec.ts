@@ -1,27 +1,32 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-describe('AppComponent', () => {
+import {TableComponent} from 'xynga-table';
+import {ColumnHeader} from 'xynga-table';
+
+describe('Table-Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        TableComponent
       ],
     }).compileComponents();
   }));
-  it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  }));
-  it(`should have as title 'app'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app');
-  }));
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
+  it('should create the table', async(() => {
+    const fixture = TestBed.createComponent(TableComponent);
+    const table = fixture.debugElement.componentInstance;
+    table.columnHeaders = [ new ColumnHeader('gjdioahg',false),
+      new ColumnHeader('sagsadg',false),
+      new ColumnHeader('asgsg',false)];
+    fixture.nativeElement.innerHTML = `<tr *ngFor="let entry of tableData">
+    <td>{{entry.firstName}}</td>
+    <td>{{entry.lastName}}</td>
+    <td>{{entry.emailAddress}}</td>
+    <td>{{entry.lifeGoal}}</td>
+  </tr>`
+    table.maxHeight = 300;
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
+    expect(TableComponent).toBeTruthy();
   }));
+
 });

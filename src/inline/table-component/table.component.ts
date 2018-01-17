@@ -1,4 +1,7 @@
-import {AfterContentInit, AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild} from '@angular/core';
+import {
+    AfterContentInit, AfterViewInit, Component, ContentChild, ElementRef, HostListener, Input, OnInit, TemplateRef,
+    ViewChild
+} from '@angular/core';
 
 const SELECTOR: string = 'ui-table';
 
@@ -54,7 +57,7 @@ export class ColumnHeader {
       </div>
     `,
     styles: [`
-      *{box-sizing:border-box}.paginated{overflow-y:hidden}.scrollable{overflow-y:auto}.standard{overflow:hidden}div.table-data{background:whitesmoke;position:relative}tr.table-header{background:darkgray}table{table-layout:fixed;border-collapse:collapse;width:100%}th,td{border:1px solid dimgrey;text-align:left;padding:8px}
+      *{box-sizing:border-box}.paginated{overflow-y:hidden}.scrollable{overflow-y:auto}.standard{overflow:hidden}div.table-data{background:whitesmoke;position:relative}tr.table-header{background:darkgray}table{table-layout:fixed;border-collapse:collapse;width:100%}th,td{border:1px solid #266eb3;text-align:left;padding:8px;color:#c0c0c0}
     `] //This CSS is necessary for the tables to display properly
 })
 export class TableComponent implements OnInit, AfterViewInit, AfterContentInit{
@@ -67,6 +70,7 @@ export class TableComponent implements OnInit, AfterViewInit, AfterContentInit{
 
     @ViewChild('header') tableHeader: ElementRef;
     @ViewChild('tableData') tableData: ElementRef;
+    @ContentChild(TemplateRef) icon: TemplateRef<any>;
     childCount: number;
     numColumns: number;
 
