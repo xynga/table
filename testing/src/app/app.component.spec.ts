@@ -8,17 +8,18 @@ describe('Table-Component', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        TableComponent
+        TableComponent,
+        ColumnHeader
       ],
     }).compileComponents();
   }));
   it('should create the table', async(() => {
     const fixture = TestBed.createComponent(TableComponent);
     const table = fixture.debugElement.componentInstance;
-    table.columnHeaders = [ new ColumnHeader('gjdioahg',false),
+    table.columnHeaders = [new ColumnHeader('sagsadg',false),
       new ColumnHeader('sagsadg',false),
-      new ColumnHeader('asgsg',false)];
-    fixture.nativeElement.innerHTML = `<tr *ngFor="let entry of tableData">
+      new ColumnHeader('sagsadg',false)];
+    fixture.debugElement.nativeElement.innerHTML = `<tr *ngFor="let entry of tableData">
     <td>{{entry.firstName}}</td>
     <td>{{entry.lastName}}</td>
     <td>{{entry.emailAddress}}</td>
