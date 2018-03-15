@@ -59,15 +59,18 @@ describe('Table-Component', () => {
     expect(spy).toHaveBeenCalled();
   }));
 
-  it('THIS SHOULDNT WORK--WHY?! should call setColumnWidths', async(() => {
-    tableComp.scrollable = 1;
-    tableComp.tbody = 1;
-    tableComp.maxHeight = 1;
-    var temp = [{style: {setProperty(){return }}} ];
-    // const spy = spyOn(tableComp.tableData.nativeElement, 'getElementsByTagName').and.returnValue(temp);
-    tableComp.setColumnWidths();
-    // expect(spy).toHaveBeenCalled();
-  }));
+  // it('THIS SHOULDNT WORK--WHY?! should call setColumnWidths', async(() => {
+  //   tableComp.scrollable = 1;
+  //   tableComp.tbody = 1;
+  //   tableComp.maxHeight = 1;
+  //   var temp = [{style: {setProperty(){return }}} ];
+  //   var temp2 = {clientWidth(){return 1}};
+  //   const spy = spyOn(tableComp.tableHeader.nativeElement, 'getElementsByTagName').and.returnValue(temp);
+  //   const spy2 = spyOn(tableComp.tableData.nativeElement.getElementsByTagName.item.getElementsByTagName.item, 'getElementsByTagName').and.returnValue(temp2);
+  //   tableComp.setColumnWidths();
+  //   expect(spy).toHaveBeenCalled();
+  //   expect(spy2).toHaveBeenCalled();
+  // }));
 
   it('should call calculateNumPages', async(() => {
     const spy = spyOn(tableComp, 'calculateNumPages');
@@ -140,12 +143,26 @@ describe('Table-Component', () => {
     tableComp.currentPage = 6;
     expect(tableComp.buttonDisplay(2)).toBeTruthy();
   }));
-  it('should call display', async(() => {
-    tableComp.columnHeaders = [null, null, null];
+  it('should be true', async(() => {
+    tableComp.columnHeaders = [null, null, {sortable: 'true'}];
     tableComp.numbered = true;
     tableComp.paginated = true;
-
-    tableComp.sortTable(3);
-    tableComp.numbered = 1;
+    tableComp.sortTable(2);
   }));
+  it('should be false', async(() => {
+    tableComp.columnHeaders = [null, null, {sortable: 'false'}];
+    tableComp.numbered = true;
+    tableComp.paginated = true;
+    tableComp.sortTable(2);
+  }));
+  it('should be false', async(() => {
+    tableComp.columnHeaders = [null, null, {sortable: 'true'}];
+    tableComp.numbered = false;
+    tableComp.paginated = true;
+    tableComp.sortedBy = 2;
+    tableComp.sortTable(2);
+  }));
+
 })
+
+
