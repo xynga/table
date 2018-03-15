@@ -61,8 +61,6 @@ describe('Table-Component', () => {
 
   // it('THIS SHOULDNT WORK--WHY?! should call setColumnWidths', async(() => {
   //   tableComp.scrollable = 1;
-  //   tableComp.tbody = 1;
-  //   tableComp.maxHeight = 1;
   //   var temp = [{style: {setProperty(){return }}} ];
   //   var temp2 = {clientWidth(){return 1}};
   //   const spy = spyOn(tableComp.tableHeader.nativeElement, 'getElementsByTagName').and.returnValue(temp);
