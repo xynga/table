@@ -11,7 +11,7 @@ export class ColumnHeader {
 
     constructor(name: string, sortable?: boolean) {
         this.name = name;
-        this.sortable = sortable;
+            this.sortable = sortable;
     };
 }
 
@@ -48,7 +48,6 @@ export class TableComponent implements OnInit, AfterViewInit, AfterContentInit{
             this.numColumns += 1;
         }
     }
-
 
     ngAfterViewInit() {
         this.styleTable();
