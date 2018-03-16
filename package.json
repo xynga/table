@@ -14,7 +14,8 @@
     "rebuild": "npm run build && npm start",
     "setup": "cd src && npm i && cd .. && npm run build && cd testing && npm i && cd .. && npm run link-build",
     "start": "cd testing && start chrome http://localhost:4200 && ng serve",
-    "test": "npm run start"
+    "test": "cd testing && ng test --watch=false --code-coverage",
+    "e2e": "cd testing && ng e2e"
   },
   "author": "GradTech V",
   "license": "MIT",
