@@ -4,8 +4,11 @@ export class AppPage {
   navigateTo() {
     return browser.get('/');
   }
-
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getFirstName() {
+    return element(by.cssContainingText('td', 'First Name'));
   }
+  getEmailAddress() {
+    return element(by.cssContainingText('td', 'Email Address'));
+  }
+
 }
