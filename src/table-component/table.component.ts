@@ -20,6 +20,7 @@ export class ColumnHeader {
     templateUrl: './table.component.html',
     styleUrls:['./table.component.css'] //This CSS is necessary for the tables to display properly
 })
+
 export class TableComponent implements OnInit, AfterViewInit, AfterContentInit{
     @Input() public columnHeaders: ColumnHeader[];
     @Input() public numbered: boolean;
