@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { TablesModule} from 'xynga-table';
+import { TablesModule} from '../table';
 import { AppComponent } from './app.component';
 
 

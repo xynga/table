@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ColumnHeader} from 'xynga-table';
+import {ColumnHeader} from '../table';
 
 
 class TestType {

@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import {TableComponent} from 'xynga-table';
+import {TableComponent} from './table.component';
 import {By} from "@angular/platform-browser";
+import {AppComponent} from "../../app/app.component";
 
 describe('Table-Component', () => {
   let table, tableComp, tableEle;
@@ -15,7 +15,7 @@ describe('Table-Component', () => {
   }));
   beforeEach(() => {
     const fixture = TestBed.createComponent(AppComponent);
-    table = fixture.debugElement.query(By.css('.table-container'));
+    table = fixture.debugElement.query(By.css(".table-container"));
     tableComp = table.componentInstance;
     tableEle = table.nativeElement;
     fixture.detectChanges();
@@ -58,17 +58,6 @@ describe('Table-Component', () => {
     tableComp.onResize();
     expect(spy).toHaveBeenCalled();
   }));
-
-  // it('THIS SHOULDNT WORK--WHY?! should call setColumnWidths', async(() => {
-  //   tableComp.scrollable = 1;
-  //   var temp = [{style: {setProperty(){return }}} ];
-  //   var temp2 = {clientWidth(){return 1}};
-  //   const spy = spyOn(tableComp.tableHeader.nativeElement, 'getElementsByTagName').and.returnValue(temp);
-  //   const spy2 = spyOn(tableComp.tableData.nativeElement.getElementsByTagName.item.getElementsByTagName.item, 'getElementsByTagName').and.returnValue(temp2);
-  //   tableComp.setColumnWidths();
-  //   expect(spy).toHaveBeenCalled();
-  //   expect(spy2).toHaveBeenCalled();
-  // }));
 
   it('should call calculateNumPages', async(() => {
     const spy = spyOn(tableComp, 'calculateNumPages');
@@ -161,6 +150,4 @@ describe('Table-Component', () => {
     tableComp.sortTable(2);
   }));
 
-})
-
-
+});
